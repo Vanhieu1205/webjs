@@ -1,0 +1,113 @@
+[
+  {
+    "_id": {
+      "$oid": "640000000000000000000001"
+    },
+    "TenKhoaHoc": "Java",
+    "MoTa": "Khóa học lập trình Java cơ bản đến nâng cao",
+    "NgayBatDau": "2024-01-01T00:00:00Z",
+    "NgayKetThuc": "2024-06-01T00:00:00Z",
+    "image": "java.png",
+    "students": [
+      "SV001",
+      "SV002",
+      "SV005",
+      "SV009"
+    ],
+    "supports": [
+      "SUP001",
+      "SUP002",
+      "SUP003",
+      "SUP007"
+    ],
+    "createdAt": "2025-05-23T15:25:00Z",
+    "updatedAt": "2025-05-23T15:25:00Z"
+  },
+  {
+    "_id": {
+      "$oid": "640000000000000000000002"
+    },
+    "TenKhoaHoc": "Python",
+    "MoTa": "Khóa học lập trình Python cho người mới bắt đầu",
+    "NgayBatDau": "2024-02-01T00:00:00Z",
+    "NgayKetThuc": "2024-07-01T00:00:00Z",
+    "image": "python.png",
+    "students": [
+      "SV001",
+      "SV004",
+      "SV007",
+      "SV010"
+    ],
+    "supports": [
+      "SUP002",
+      "SUP005",
+      "SUP009"
+    ],
+    "createdAt": "2025-05-23T15:25:00Z",
+    "updatedAt": "2025-05-23T15:25:00Z"
+  },
+  {
+    "_id": {
+      "$oid": "640000000000000000000003"
+    },
+    "TenKhoaHoc": "C++",
+    "MoTa": "Khóa học lập trình C++ chuyên sâu",
+    "NgayBatDau": "2024-03-01T00:00:00Z",
+    "NgayKetThuc": "2024-08-01T00:00:00Z",
+    "image": "c++.png",
+    "students": [
+      "SV003",
+      "SV007",
+      "SV010"
+    ],
+    "supports": [
+      "SUP001",
+      "SUP006",
+      "SUP010"
+    ],
+    "createdAt": "2025-05-23T15:25:00Z",
+    "updatedAt": "2025-05-23T15:25:00Z"
+  },
+  {
+    "_id": {
+      "$oid": "640000000000000000000004"
+    },
+    "TenKhoaHoc": "JavaScript",
+    "MoTa": "Khóa học lập trình JavaScript toàn diện",
+    "NgayBatDau": "2024-04-01T00:00:00Z",
+    "NgayKetThuc": "2024-09-01T00:00:00Z",
+    "image": "js.jpg",
+    "students": [
+      "SV003",
+      "SV006",
+      "SV009"
+    ],
+    "supports": [
+      "SUP004",
+      "SUP007",
+      "SUP010"
+    ],
+    "createdAt": "2025-05-23T15:25:00Z",
+    "updatedAt": "2025-05-23T15:25:00Z"
+  },
+  {
+    "_id": {
+      "$oid": "640000000000000000000005"
+    },
+    "TenKhoaHoc": "React",
+    "MoTa": "Khóa học lập trình React và phát triển frontend",
+    "NgayBatDau": "2024-05-01T00:00:00Z",
+    "NgayKetThuc": "2024-10-01T00:00:00Z",
+    "image": "react.png",
+    "students": [
+      "SV005",
+      "SV008"
+    ],
+    "supports": [
+      "SUP005",
+      "SUP008"
+    ],
+    "createdAt": "2025-05-23T15:25:00Z",
+    "updatedAt": "2025-05-23T15:25:00Z"
+  }
+]

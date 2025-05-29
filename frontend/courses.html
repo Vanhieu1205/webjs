@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLB Tin Học - Khóa học</title>
+    <!-- Links to separate CSS files -->
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="../css/courses.css">
+    <script src="./js/header.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Danh sách khóa học</h1>
+                <button class="add-button" id="add-course-button" onclick="openAddCourseModal()">
+                    <i class="fas fa-plus"></i> Thêm khóa học
+                </button>
+            </div>
+
+            <div class="filters">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm khóa học...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div id="loading" class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Đang tải...</span>
+            </div>
+            <div id="error" class="error" style="display: none;"></div>
+            <div id="courses-grid" class="courses-grid"></div>
+        </div>
+    </main>
+
+    <!-- Course Card Template -->
+    <template id="course-card-template">
+        <div class="course-card">
+            <div class="card-content">
+                <img class="course-image" data-course-image src="" alt="Course Image">
+                <h3 class="card-title" data-course-name></h3>
+                <p class="card-description" data-course-description></p>
+                <div class="course-info">
+                    <p><i class="fas fa-calendar-alt"></i> Bắt đầu: <span data-course-start-date></span></p>
+                    <p><i class="fas fa-calendar-alt"></i> Kết thúc: <span data-course-end-date></span></p>
+                </div>
+                <div class="card-actions">
+                    <button class="details-button" data-details-button>
+                        <i class="fas fa-info-circle"></i> Chi tiết
+                    </button>
+                    <button class="edit-button" data-edit-button>
+                        <i class="fas fa-edit"></i> Sửa
+                    </button>
+                    <button class="delete-button" data-delete-button>
+                        <i class="fas fa-trash"></i> Xóa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Add/Edit Course Modal -->
+    <div id="course-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Thêm khóa học mới</h2>
+                <button class="close-button" onclick="closeCourseModal()">&times;</button>
+            </div>
+            <form id="course-form">
+                <div class="form-group">
+                    <label for="course-name">Tên khóa học</label>
+                    <input type="text" id="course-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-description">Mô tả</label>
+                    <textarea id="course-description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="course-start-date">Ngày bắt đầu</label>
+                    <input type="date" id="course-start-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-end-date">Ngày kết thúc</label>
+                    <input type="date" id="course-end-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-image">Hình ảnh</label>
+                    <input type="file" id="course-image" accept="image/*">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-button" onclick="closeCourseModal()">Hủy</button>
+                    <button type="submit" class="save-button">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Course Details Modal -->
+    <div id="course-details-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Chi tiết khóa học: <span id="course-details-name"></span></h2>
+                <button class="close-button" onclick="closeCourseDetailsModal()">&times;</button>
+            </div>
+            <div class="details-content">
+                <div class="details-section">
+                    <h3>Danh sách học viên</h3>
+                    <div class="list-actions">
+                        <button class="add-button" onclick="openAddStudentModal()">
+                            <i class="fas fa-plus"></i> Thêm học viên
+                        </button>
+                    </div>
+                    <div id="students-list" class="details-list"></div>
+                </div>
+                <div class="details-section">
+                    <h3>Danh sách support</h3>
+                    <div class="list-actions">
+                        <button class="add-button" onclick="openAddSupportModal()">
+                            <i class="fas fa-plus"></i> Thêm support
+                        </button>
+                    </div>
+                    <div id="supports-list" class="details-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Student Modal -->
+    <div id="add-student-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thêm học viên</h2>
+                <button class="close-button" onclick="closeAddStudentModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="search-box">
+                    <input type="text" id="student-search" placeholder="Tìm kiếm học viên...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div id="available-students" class="available-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Support Modal -->
+    <div id="add-support-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Thêm support</h2>
+                <button class="close-button" onclick="closeAddSupportModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="search-box">
+                    <input type="text" id="support-search" placeholder="Tìm kiếm support...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div id="available-supports" class="available-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/home.js"></script>
+    <script src="../js/courses.js"></script>
+</body>
+
+</html>

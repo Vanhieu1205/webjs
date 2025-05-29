@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CÂU LẠC BỘ TIN HỌC - Đăng ký</title>
+  <link rel="stylesheet" href="./css/register.css" />
+  <!-- Thêm CSS Flatpickr -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="logo-section">
+      <div class="text-center">
+        <img src="./images/background.png" alt="Logo" class="logo" />
+        <h1>CÂU LẠC BỘ TIN HỌC</h1>
+      </div>
+    </div>
+    <div class="form-section">
+      <div id="errorMsg" style="color: red; margin-bottom: 10px;"></div>
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="studentId">Mã Sinh viên</label>
+          <input type="text" class="form-control" id="studentId" name="studentId" required />
+        </div>
+
+        <div class="form-group">
+          <label for="name">Tên sinh viên</label>
+          <input type="text" class="form-control" id="name" name="name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Số Điện Thoại</label>
+          <input type="tel" class="form-control" id="phone" name="phone" required />
+        </div>
+
+        <div class="form-group">
+          <label for="dateOfBirth">Ngày Sinh</label>
+          <input type="text" class="form-control" id="dateOfBirth" name="dateOfBirth" placeholder="DD/MM/YYYY" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mật khẩu</label>
+          <input type="password" class="form-control" id="password" name="password" required />
+        </div>
+
+        <button type="submit" class="btn">Đăng ký</button>
+      </form>
+      <p class="text-center">
+        Đã có tài khoản? <a href="/login.html">Đăng nhập</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Thêm JS Flatpickr -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- JS xử lý form -->
+  <script src="./js/register.js"></script>
+</body>
+</html>

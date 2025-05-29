@@ -1,0 +1,21 @@
+[
+  {
+    "studentId": "3120211",
+    "name": "sang",
+    "email": "sang@gami.com",
+    "phone": "0352554789",
+    "dateOfBirth": "2004-02-08",
+    "password": "$2b$10$a0TeS.wzZeheIZhw37cizOlMIdtNxv1q0WREQQuny5mLU0tNE5Q2m",
+    "role": "admin"
+  },
+  {
+    "studentId": "312",
+    "name": "hiu",
+    "email": "h@gami.com",
+    "phone": "0352554789",
+    "dateOfBirth": "2024-02-10",
+    "password": "$2b$10$a0TeS.wzZeheIZhw37cizOlMIdtNxv1q0WREQQuny5mLU0tNE5Q2m",
+    "role": "user"
+  }
+
+]

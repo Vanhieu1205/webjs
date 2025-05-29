@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Khóa học</title>
+    <link rel="stylesheet" href="css/course-details.css"> <!-- Link to the new details page CSS -->
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="../css/courses.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+
+    <!-- Header content, similar to other pages -->
+    <div class="container">
+        <h1>Chi tiết Khóa học</h1>
+        <!-- Navigation or back button could go here -->
+    </div>
+
+    <main class="container course-details-container">
+        <div id="loading" class="loading" style="display: none;">Đang tải...</div>
+        <div id="error" class="error-message" style="display: none;"></div>
+
+        <div class="course-info-section">
+            <h2 id="course-details-name">Tên Khóa học</h2>
+            <!-- Add more course info fields here as needed, e.g., description, dates -->
+        </div>
+
+        <div class="students-section">
+            <h3>Danh sách học viên</h3>
+            <button class="add-button" onclick="openAddStudentModal()">+ Thêm học viên</button>
+            <div id="students-list" class="list-items-container">
+                <!-- Student items will be loaded here by JS -->
+            </div>
+        </div>
+
+        <div class="supports-section">
+            <h3>Danh sách support</h3>
+            <button class="add-button" onclick="openAddSupportModal()">+ Thêm support</button>
+            <div id="supports-list" class="list-items-container">
+                <!-- Support items will be loaded here by JS -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Add Result Modal Structure -->
+    <div id="result-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeResultModal()">&times;</span>
+            <h2 id="result-modal-title">Kết quả học viên</h2>
+            <p>Học viên: <strong id="result-student-name"></strong></p>
+            <p>Khóa học: <strong id="result-course-name"></strong></p>
+            <label for="student-score">Điểm:</label>
+            <input type="number" id="student-score" step="0.1" min="0" max="10">
+            <button class="save-button" onclick="saveResult()">Lưu kết quả</button>
+            <!-- Hidden fields to store student and course IDs -->
+            <input type="hidden" id="result-student-id">
+            <input type="hidden" id="result-course-id">
+        </div>
+    </div>
+
+    <!-- Add Student Modal Structure -->
+    <div id="add-student-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeAddStudentModal()">&times;</span>
+            <h2>Thêm học viên vào khóa học</h2>
+            <input type="text" id="student-search" placeholder="Tìm kiếm học viên...">
+            <div id="available-students" class="list-items-container selectable">
+                <!-- Available student items will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Support Modal Structure -->
+    <div id="add-support-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeAddSupportModal()">&times;</span>
+            <h2>Thêm support vào khóa học</h2>
+            <input type="text" id="support-search" placeholder="Tìm kiếm support...">
+            <div id="available-supports" class="list-items-container selectable">
+                <!-- Available support items will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/home.js"></script>
+    <script src="js/course-details.js" type="module"></script> <!-- Link to the new details page JS -->
+</body>
+
+</html>

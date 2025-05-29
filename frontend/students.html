@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLB Tin Học - Học viên</title>
+
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/students.css">
+    <script src="./js/header.js" defer></script>
+
+</head>
+
+<body>
+    <!-- Common Components Container -->
+    <div id="header-container"></div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Danh sách học viên</h1>
+                <button class="add-button" onclick="openAddStudentModal()">
+                    <i class="fas fa-plus"></i> Thêm học viên
+                </button>
+            </div>
+
+            <div class="filters">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Tìm kiếm học viên...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="filter-controls">
+                    <label for="class-filter" class="visually-hidden">Lọc theo lớp học</label>
+                    <select id="class-filter" aria-label="Lọc theo lớp học">
+                        <option value="">Tất cả lớp học</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                    <!-- Status filter might be removed or commented out if not used with current data -->
+                    <!-- <select id="status-filter">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="active">Đang học</option>
+                        <option value="inactive">Đã tốt nghiệp</option>
+                    </select> -->
+                </div>
+            </div>
+
+            <div id="loading" class="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Đang tải...</span>
+            </div>
+            <div id="error" class="error" style="display: none;"></div>
+            <div id="students-grid" class="students-grid"></div>
+        </div>
+    </main>
+
+    <!-- Student Card Template -->
+    <template id="student-card-template">
+        <div class="student-card">
+            <div class="card-content">
+                <h3 class="card-title" data-student-name></h3>
+                <div class="student-info">
+                    <p><i class="fas fa-id-badge"></i> Mã Sinh Viên: <span data-student-id></span></p>
+                    <p><i class="fas fa-envelope"></i> Email: <span data-student-email></span></p>
+                    <p><i class="fas fa-phone"></i> SĐT: <span data-student-phone></span></p>
+                    <p><i class="fas fa-chalkboard"></i> Lớp: <span data-student-class></span></p>
+                    <p><i class="fas fa-calendar-alt"></i> Tham gia: <span data-student-join-date></span></p>
+                </div>
+                <div class="card-actions">
+                    <button class="edit-button" data-edit-button>
+                        <i class="fas fa-edit"></i> Sửa
+                    </button>
+                    <button class="delete-button" data-delete-button>
+                        <i class="fas fa-trash"></i> Xóa
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Add Student Modal -->
+    <div id="add-student-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Thêm học viên mới</h2>
+                <button class="close-button" onclick="closeAddStudentModal()" aria-label="Đóng" title="Đóng">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="add-student-form">
+                <div class="form-group student-id-group">
+                    <label for="student-id">Mã Sinh Viên</label>
+                    <input type="text" id="student-id">
+                </div>
+                <div class="form-group">
+                    <label for="student-name">Họ và tên</label>
+                    <input type="text" id="student-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-email">Email</label>
+                    <input type="email" id="student-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-phone">Số điện thoại</label>
+                    <input type="tel" id="student-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="student-class">Lớp học</label>
+                    <input type="text" id="student-class" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-button" onclick="closeAddStudentModal()">Hủy</button>
+                    <button type="submit" class="save-button">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./js/home.js"></script>
+    <script src="../js/students.js" type="module"></script>
+</body>
+
+</html>

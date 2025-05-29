@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kết quả học tập</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/results.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="../css/courses.css">
+  <script src="./js/header.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <div id="header-container"></div>
+
+  <div class="container">
+    <h1>Kết quả học tập</h1>
+  </div>
+
+
+  <main class="container results-container">
+    <div id="loading" class="loading" style="display: none;">Đang tải...</div>
+    <div id="error" class="error-message" style="display: none;"></div>
+
+    <div class="results-table-container">
+      <h2>Tổng hợp kết quả</h2>
+      <input type="text" id="result-search" placeholder="Tìm kiếm theo tên sinh viên hoặc khóa học...">
+      <table id="results-table">
+        <thead>
+          <tr>
+            <th>Khóa học</th>
+            <th>Học viên</th>
+            <th>Điểm</th>
+            <th>Ngày cập nhật</th>
+          </tr>
+        </thead>
+        <tbody id="results-table-body">
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+  <script src="./js/home.js"></script>
+  <script src="js/results.js"></script>
+</body>
+
+</html>

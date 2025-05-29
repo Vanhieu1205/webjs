@@ -1,0 +1,86 @@
+ body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      display: flex;
+      max-width: 800px;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .logo-section, .form-section {
+      flex: 1;
+      padding: 20px;
+    }
+    .logo-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: relative;
+    }
+    .logo-section h1 {
+      position: absolute;
+      top: 70px;
+      left: 36%;
+      transform: translateX(-50%);
+      margin: 0;
+      font-size: 1.7em;
+      text-align: center;
+    }
+    .form-section {
+      padding: 40px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #3D9B1C;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .logo-section img {
+      width: 420px;
+    }
+    .text-center {
+      text-align: left;
+      color: #000;
+    }
+    #errorMsg {
+      color: red;
+      margin-bottom: 15px;
+      display: none;
+    }
+    input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 5px;           /* Bo góc tròn mềm mại */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);  /* Bóng nhẹ */
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+input:focus {
+  border-color: #4CAF50;        /* Viền xanh khi focus */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);  /* Glow nhẹ */
+}

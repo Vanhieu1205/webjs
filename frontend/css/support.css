@@ -1,0 +1,241 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+h1.text-center {
+  font-weight: 700;
+  color: #28a745;
+}
+
+/* Header */
+#header-container {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  border-left: 5px solid #28a745;
+}
+
+#header-container h1 {
+  font-size: 2rem;
+  color: #228b22;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+#header-container h1::before {
+  content: "👨‍🎓";
+  font-size: 2rem;
+}
+
+#header-container .add-button {
+  background-color: #28a745;
+  color: white;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0, 128, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#header-container .add-button:hover {
+  background-color: #218838;
+  cursor: pointer;
+}
+
+/* Danh sách Support */
+#supportList {
+  margin-top: 20px;
+}
+
+.support-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.support-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.support-card .image-container {
+  margin-bottom: 15px;
+}
+
+.support-card img {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #28a745;
+}
+
+.support-card h5 {
+  color: #28a745;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.support-card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.support-card .btn {
+  margin: 5px 5px 0 5px;
+  width: 80px;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004080;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #a71d2a;
+}
+
+/* Bộ lọc */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-box {
+  position: relative;
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 35px 8px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+}
+
+.search-box i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.filter-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-controls select {
+  padding: 8px 15px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  min-width: 180px;
+  outline: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 576px) {
+  .filters {
+    flex-direction: column;
+    padding: 15px 10px;
+  }
+
+  .filter-controls {
+    width: 100%;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+  .btn-success {
+    width: 100%;
+    padding: 12px 0;
+  }
+
+  #supportList {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+  }
+
+  #header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  #header-container .add-button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Desktop grid */
+@media (min-width: 577px) {
+  #supportList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+}
