@@ -53,6 +53,7 @@ function displayCourseDetails(course, students, supports) {
 
             let supportActionsHtml = '';
             if (isAdmin) {
+
                 supportActionsHtml += `<button class="remove-button" onclick="removeSupportFromCourse('${currentCourseId}', '${support._id}')"><i class="fas fa-times"></i></button>`;
             }
 
@@ -549,6 +550,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const supportSearch = getElement('support-search');
         if (supportSearch) {
             supportSearch.addEventListener('input', displayAvailableSupports);
+        }
+
+        // Lấy thông tin user và kiểm tra vai trò để ẩn/hiện nút 'Thêm support'
+        const user = JSON.parse(localStorage.getItem('user'));
+        const isAdmin = user && user.role === 'admin';
+        const addSupportButton = document.querySelector('.supports-section .add-button');
+
+        if (addSupportButton && !isAdmin) {
+            addSupportButton.style.display = 'none'; // Ẩn nút nếu không phải admin
         }
 
     } else {

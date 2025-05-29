@@ -40,18 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentStudentId = null; // Lưu ID của sinh viên đang được chỉnh sửa/xóa
     let allStudents = []; // Lưu trữ toàn bộ danh sách sinh viên lấy từ API
 
-    // Các hàm xử lý logic và hiển thị
-    // Hàm lấy text trạng thái (Đang học/Đã tốt nghiệp) dựa trên mã trạng thái
-    const getStatusText = (status) => {
-        switch (status) {
-            case 'active':
-                return 'Đang học';
-            case 'inactive':
-                return 'Đã tốt nghiệp';
-            default:
-                return 'Không xác định';
-        }
-    };
+
 
     // Hàm hiển thị danh sách sinh viên lên giao diện
     const displayStudents = (students) => {

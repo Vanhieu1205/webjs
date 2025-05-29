@@ -32,8 +32,8 @@ app.use('/api', (req, res, next) => {
 // app.use('/api', (req, res, next) => { next(); });
 
 // API Routes - Define before static file serving to ensure API calls are handled first
-const resultRoutes = require('./routes/resultsRoutes');
-const courseRoutes = require('./routes/coursesRoutes');
+const resultRoutes = require('./routes/resultsRoutes.js');
+const courseRoutes = require('./routes/coursesRoutes.js');
 const authRoutes = require('./routes/authRoutes');
 const supportRoutes = require('./routes/supportRoutes');
 const studentRoutes = require('./routes/studentsRouter');
